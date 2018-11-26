@@ -1,5 +1,7 @@
+'''停车场类'''
 from position import Position
 class Parking_place():
+    # 初始化车位
     positions = []
     for x in range(0,10):
         positions.append(Position(1))
@@ -11,12 +13,14 @@ class Parking_place():
     def __init__(self,order):
         self.order = order
 
+# 获取车位数量
     def get_position_count(self): 
         count = 0
         for x in Parking_place.positions:
             count = count+x.status
         return 30-count
 
+# 打印订单
     def print_order(self):
         print("尊敬的"+str(self.order.parking_info.owner.name))
         print("您的车："+str(self.order.parking_info.car.car_id))
